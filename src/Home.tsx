@@ -47,7 +47,6 @@ const Home = (props: HomeProps) => {
     message: "",
     severity: undefined,
   });
-
   const [startDate, setStartDate] = useState(new Date(props.startDate));
 
   const wallet = useWallet();
@@ -160,6 +159,7 @@ const Home = (props: HomeProps) => {
 
   return (
     <main>
+      <p>Hola probando agregar un tag</p>
       {wallet.connected && (
         <p>Address: {shortenAddress(wallet.publicKey?.toBase58() || "")}</p>
       )}
@@ -220,9 +220,10 @@ interface AlertState {
 }
 
 const renderCounter = ({ days, hours, minutes, seconds, completed }: any) => {
+  console.log(days + "" + hours)
   return (
     <CounterText>
-      {hours} hours, {minutes} minutes, {seconds} seconds
+      {days} days, {hours} hours, {minutes} minutes, {seconds} seconds
     </CounterText>
   );
 };
